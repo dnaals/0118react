@@ -17,7 +17,7 @@ function App() {
       elInput.current.value = '';
     } else if (elSave.current.innerHTML == '수정' && elInput.current.value != '') {
       putData(dataID, value)
-      elSave.current.innerHTML = "저장";
+      elSave.current = "저장";
       elInput.current.value = '';
 
     }
@@ -30,7 +30,7 @@ function App() {
 
       <article className='section01'>
         <input type="text" ref={elInput} />
-        <button ref={elSave} onClick={() => { btnfunc(elInput.current.value) }}>저장</button>
+        <button onClick={() => { btnfunc(elInput.current.value) }}>{elSave !== '수정' ? '저장' : '수정'}</button>
       </article>
       <article className='section02'>
         <h2>리스트</h2>
@@ -42,7 +42,7 @@ function App() {
                 <p>{k + 1}. {obj.name}</p>
                 <div>
                   <button onClick={() => { deleteData(obj.id) }}>삭제</button>
-                  <button onClick={() => { setDataID(obj.id); elSave.current.innerHTML = "수정" }}>수정</button>
+                  <button onClick={() => { setDataID(obj.id); elSave.current = "수정" }}>수정</button>
                 </div>
 
               </li>
