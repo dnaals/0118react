@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import './common.scss';
 function App() {
   const elInput = useRef();
-  const elSave = useRef();
+  const elSave = useRef('저장');
   const { data, getData, status, postData, deleteData, putData } = useStore();
 
   const [dataID, setDataID] = useState();
@@ -42,7 +42,7 @@ function App() {
                 <p>{k + 1}. {obj.name}</p>
                 <div>
                   <button onClick={() => { deleteData(obj.id) }}>삭제</button>
-                  {/* <button onClick={() => { setDataID(obj.id); elSave.current = "수정" }}>수정</button> */}
+                  <button onClick={() => { setDataID(obj.id); elSave.current = "수정" }}>수정</button>
                 </div>
 
               </li>
