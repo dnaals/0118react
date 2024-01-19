@@ -12,10 +12,10 @@ function App() {
   // console.log(data);
 
   let btnfunc = function (value) {
-    if (elSave.current.innerHTML == '저장' && elInput.current.value != '') {
+    if (elSave.current == '저장' && elInput.current.value != '') {
       postData(value);
       elInput.current.value = '';
-    } else if (elSave.current.innerHTML == '수정' && elInput.current.value != '') {
+    } else if (elSave.current == '수정' && elInput.current.value != '') {
       putData(dataID, value)
       elSave.current = "저장";
       elInput.current.value = '';
@@ -30,7 +30,7 @@ function App() {
 
       <article className='section01'>
         <input type="text" ref={elInput} />
-        <button onClick={() => { btnfunc(elInput.current.value) }}>{elSave !== '수정' ? '저장' : '수정'}</button>
+        <button onClick={() => { btnfunc(elInput.current.value) }}>{elSave.current !== '수정' ? '저장' : '수정'}</button>
       </article>
       <article className='section02'>
         <h2>리스트</h2>
