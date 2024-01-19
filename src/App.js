@@ -42,7 +42,7 @@ function App() {
                 <p>{k + 1}. {obj.name}</p>
                 <div>
                   <button onClick={() => { deleteData(obj.id) }}>삭제</button>
-                  <button onClick={() => { setDataID(obj.id); elSave.current = "수정" }}>수정</button>
+                  {/* <button onClick={() => { setDataID(obj.id); elSave.current = "수정" }}>수정</button> */}
                 </div>
 
               </li>
